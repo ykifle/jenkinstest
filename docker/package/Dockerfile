@@ -1,8 +1,11 @@
 FROM jenkinstest-base
 MAINTAINER yohannesk <yohannesk@nestlabs.com>
 
-RUN mkdir website
-COPY . /website
-WORKDIR /website
+RUN dnf install -y docker-engine
 
-ENTRYPOINT ["gunicorn", "-b", ":5000", "app:app"]
+RUN mkdir /package
+COPY Packagefile /package/Dockerfile
+COPY .packageignore /package/.dockerignore
+WORKDIR /package
+
+ENTRYPOINT cp -r /build/* /package && docker build -t $IMAGE_NAME .
