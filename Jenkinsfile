@@ -1,4 +1,4 @@
 node {
   echo 'hello from Pipeline4'
-  sh 'echo `ls`'
+  sh 'bin/bash ls'
 }
