@@ -11,6 +11,7 @@ node {
   }
   sh 'echo `pwd`'
   sh 'echo `ls -la`'
+  sh 'echo `ls -la`'
   sh 'docker images'
   sh 'echo $GIT_COMMIT'
 }
