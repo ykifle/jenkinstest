@@ -1,7 +1,7 @@
 node {
   stage "Checkout"
   echo "Checkout ${env.BRANCH_NAME}"
-  checkout scm build
+  checkout scm relativeTargetDir:'build'
   sh "git rev-parse HEAD > gitcommit"
   def GIT_COMMIT = readFile('gitcommit').trim()
   sh "rm gitcommit"
