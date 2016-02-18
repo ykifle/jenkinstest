@@ -14,4 +14,3 @@ node {
   sh 'docker images'
   sh 'echo $GIT_COMMIT'
 }
-docker build -t gcr.io/dropcam-dev/jenkinstest-base:$GIT docker/app
