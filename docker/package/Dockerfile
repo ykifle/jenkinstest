@@ -1,4 +1,4 @@
-FROM jenkinstest-base
+FROM gcr.io/dropcam-dev/jenkinstest-base
 MAINTAINER yohannesk <yohannesk@nestlabs.com>
 
 RUN dnf install -y docker-engine

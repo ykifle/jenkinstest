@@ -1,4 +1,4 @@
-FROM jenkinstest-base
+FROM gcr.io/dropcam-dev/jenkinstest-base
 MAINTAINER yohannesk <yohannesk@nestlabs.com>
 
 RUN pip install 'nose==1.3.0'
