@@ -11,4 +11,5 @@ node {
   }
   sh 'echo `pwd`'
   sh 'echo `ls -la`'
+  sh 'docker images'
 }
