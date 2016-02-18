@@ -1,5 +1,5 @@
 node {
   echo env.BRANCH_NAME
   checkout scm
-  echo scm
+  echo env.GIT_COMMIT
 }
