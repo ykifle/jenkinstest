@@ -8,7 +8,7 @@ node {
   echo "At commit $GIT_COMMIT"
 
   stage "Pull Base Image"
-  def baseImage = docker.image('gcr.io/dropcam-dev/jenkinstest-base:1.0')
+  def baseImage = docker.image('dropcam-dev/jenkinstest-base:1.0')
   docker.withRegistry('https://gcr.io', 'gcr:dropcam-dev') {
     baseImage.pull()
   }
