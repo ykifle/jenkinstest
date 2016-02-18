@@ -1,5 +1,5 @@
 node {
-  echo ${env.BRANCH_NAME}
+  echo env.BRANCH_NAME
   checkout scm
-  echo ${scm}
+  echo scm
 }
