@@ -1,7 +1,5 @@
 node {
-  echo env.BRANCH_NAME
+  step "Checkout ${env.BRANCH_NAME}"
   checkout scm
-  echo scm.metaClass.methods*.name.sort().unique()
-  echo env.GIT_COMMIT
-  sh 'env'
+  sh 'git rev-parse HEAD'
 }
