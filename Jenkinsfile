@@ -1,3 +1,5 @@
+sh 'echo $GIT_COMMIT'
+
 node {
   echo 'hello from Pipeline4'
   sh 'env'
