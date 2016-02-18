@@ -1,1 +1,5 @@
-echo $GIT_COMMIT
+node {
+  echo ${env.BRANCH_NAME}
+  checkout scm
+  echo ${scm}
+}
