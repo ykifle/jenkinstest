@@ -1,11 +1,15 @@
 node {
   stage "Checkout"
   echo "Checkout ${env.BRANCH_NAME}"
+  sh "echo 'Current dir=${pwd()}'"
+  sh "ls"
   checkout scm
   sh "git rev-parse HEAD > gitcommit"
   def GIT_COMMIT = readFile('gitcommit').trim()
   sh "rm gitcommit"
   echo "At commit $GIT_COMMIT"
+  sh "echo 'Current dir=${pwd()}'"
+  sh "ls"
 
   stage "Pull Base Image"
   sh 'docker login -e 1234@5678.com -u _json_key -p "$(cat /etc/test-jenkins.json)" https://gcr.io'
