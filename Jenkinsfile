@@ -29,6 +29,7 @@ node {
 
   stage "Run Tests"
   def testImage = docker.build("gcr.io/dropcam-dev/jenkinstest-test:$GIT_COMMIT", 'docker/test')
-  sh "docker run --rm -v '${pwd()}':/build --entrypoint pwd ${testImage.id}"
+  sh "ls -la"
+  sh "docker run --rm -v '${pwd()}':/build --entrypoint 'ls -la' ${testImage.id}"
   //def testContainer = testImage.run("-v '${pwd()}':/build gcr.io/dropcam-dev/jenkinstest-test:$GIT_COMMIT")
 }
